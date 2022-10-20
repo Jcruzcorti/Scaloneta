@@ -1,28 +1,33 @@
-.DivNavBar{
+/* .DivNavBar{
     color: #020212 ;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     
 }
-
+*/
 .divnav{
-    display: flex;
-    flex-direction: row;
-    font-size: 16px;
-    background-color: #8bbcf5;
-    color: #020212;
-}
+  margin-right: 100px;
+  margin-bottom: 50px;
+ 
+} 
 
 .navli{
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-between; */
     color: #020212;
-    font-family: 'Alfa Slab One';
+    font-size: 22px;
+    font-family: 'Noto Serif Telugu', serif;
+    padding: 5px;
 }
 
-
+.LogoAfa{
+    width: 100px;
+    height: auto;
+    filter: drop-shadow(3px 3px 4px #020212);
+    
+  }
 
 @media screen and (max-width: 768px){
 
