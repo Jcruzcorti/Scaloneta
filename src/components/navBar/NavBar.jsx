@@ -22,9 +22,9 @@ function NavBar() {
                     <div className="collapse navbar-collapse" id="navbarNav" >
                         
                       <div className="navbar-nav mx-auto">                       
-                        <li className="navli"><Link className="nav-link active" to="/category/Facil">FÁCIL</Link></li>
+                        {/* <li className="navli"><Link className="nav-link active" to="/category/Facil">FÁCIL</Link></li>
                         <li className="navli"><Link className="nav-link active" to="/category/Dificil">DIFÍCIL</Link></li>
-                        <li className="navli"><Link className="nav-link active" to="/category/Fanatico">FANÁTICO</Link></li>  
+                        <li className="navli"><Link className="nav-link active" to="/category/Fanatico">FANÁTICO</Link></li>   */}
                       </div>
                     </div>
                   </div>

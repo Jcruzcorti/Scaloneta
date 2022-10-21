@@ -2,7 +2,8 @@
 import { BrowserRouter,Routes,Route,Link } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/navBar/NavBar';
-// import LogoAfa from './img/afa.png';
+import ItemDetailContainer from './pages/itemDetailContainer/ItemDetailContainer';
+import LogoAfa from './img/afa.png';
 import ItemListContainer from './pages/itemListContainer/ItemListContainer';
 
 
@@ -12,14 +13,15 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <header className="App-header">    
-          {/* <Link to="/"><img src={LogoAfa} alt="Logo AFA" className='LogoAfa'/></Link> */}
-          <NavBar/>  
+          <img src={LogoAfa} alt="Logo AFA" className='LogoAfa'/>
+          {/* <NavBar/>   */}
       </header>
-
+{/* INTENTAR UTILIZAR CATEGORIAS CON ITEMDETAILCONTAINER, PARA QUE APRETANDO NIVELES DE DIFICULTAD DEL NAVBAR, NAVEGUE AL ITEMDETAIL CON SUS 5 PREGUNTAS CORRESPONDIENTES */}
       <section className="App-section">
         <Routes>
           <Route path="/" element={<ItemListContainer greet="QUIZ DE LA SCALONETA"/>} />
           <Route path="/category/:categoryId" element={<ItemListContainer greet="SELCCIONA TU RESPUESTA"/>} />
+          {/* <Route path="/category/:categoryId" element={<ItemDetailContainer greet="SELCCIONA TU RESPUESTA"/>} /> */}
         </Routes>
       </section>
 
