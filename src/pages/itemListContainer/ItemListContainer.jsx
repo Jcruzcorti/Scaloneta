@@ -43,6 +43,9 @@ function getQuiestions3() {
 
  const {categoryId} =useParams()
 
+
+
+
  useEffect(() => {
    
 
@@ -70,7 +73,10 @@ function getQuiestions3() {
 }, [categoryId])
 
 
- 
+
+
+
+
   return (
     <div>
         
@@ -82,14 +88,15 @@ function getQuiestions3() {
                 <Link className="navli" to="/category/Facil" >FÁCIL</Link>
                 <Link className="navli" to="/category/Dificil" >DIFÍCIL</Link>
                 <Link className="navli" to="/category/Fanatico" >FANÁTICO</Link>
+                
+                {/* <ItemList items={questions}/> */}
             </>              
             :null
         }
-           
         <div>
-            <ItemList items={questions}/>
+        <ItemList items={questions}/>
         </div>
-    
+     
     </div>
 
 )}

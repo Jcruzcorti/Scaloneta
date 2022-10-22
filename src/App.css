@@ -59,7 +59,12 @@ margin: 20px ;
 
 }
 
-
+.LogoAfa{
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(3px 3px 4px #020212);
+  
+}
 
 
 
