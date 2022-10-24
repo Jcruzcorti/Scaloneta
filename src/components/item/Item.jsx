@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
+// import { Link } from 'react-router-dom';
 // import { Questions } from '../../mock/Questions'
 // import {useNavigate } from 'react-router-dom';
 // import {Questions1,Questions2,Questions3} from '../../mock/Questions';
@@ -11,44 +12,45 @@ import React from 'react'
   // const [isFinished, setIsFinished ]=useState(false)
 
 
-
+  // const urlDetail = `/detail/${item.category}`
   return (
 
     <div>
-        
+   
+        {/* <h2>A continuación deberas seleccionar el nivel fácil </h2> */}
+        {/* <h2>Click para comezar</h2> */}
+        {/* <div> 
+          <p>Pregunta {actualQuestion + 1} de {Questions.length}</p> 
+          <h3>{Questions[actualQuestion].question}</h3>
+        </div>
+
         <div>
-           
-            <h3>{item.name} {item.question}</h3>
-            
-            {/* <h3>{Questions[actualQuestion].question}</h3> */}
+          {Questions[actualQuestion].options.map((resp)=>(
+            <button key={resp.option}>{resp.option}</button>
+          ))}
+         
           
-            {/* BUSCAR OPCION ESTILIZADA Y QUE ESTA INFO SE GUARDE EN UN ESTADO PARA IR ACUMULANDO RESPUESTAS CORRECTAS PARA EL RESULTADO */}
+           
         
+        </div> */}
+ 
+
+        <div> 
+          <h3>{item.name} {item.question}</h3>
         </div>
 
         <div>
-          {/* {Questions[actualQuestion].options.map((res)=>(
-            <>
-            <button >{res.Quiestions[options.option]}</button>
-       
-            </>
-          )
-          )} */}
-          <p>{item.option1}{<input type="radio" name="answer"/>}</p>
-          <p>{item.option2}{<input type="radio" name="answer"/>}</p>
-          <p>{item.option3}{<input type="radio" name="answer"/>}</p>
-          <p>{item.option4}{<input type="radio" name="answer"/>}</p>
-
-          {/* <p>{item.options.find(op=>op.option1)}</p>
-          <p>{item.options.find(op=>op.option2)}</p>
-          <p>{item.options.find(op=>op.option3)}</p>
-          <p>{item.options.find(op=>op.option4)}</p> */}
-
-            {/* BUSCAR OPCION ESTILIZADA Y QUE ESTA INFO SE GUARDE EN UN ESTADO PARA IR ACUMULANDO RESPUESTAS CORRECTAS PARA EL RESULTADO */}
+        
+          <p>{item.options1}{<input type="radio" name="answer"/>}</p>
+          <p>{item.options2}{<input type="radio" name="answer"/>}</p>
+          <p>{item.options3}{<input type="radio" name="answer"/>}</p>
+          <p>{item.options4}{<input type="radio" name="answer"/>}</p>
+          
+           
         
         </div>
-        
     </div>
+    
   )
 }
 

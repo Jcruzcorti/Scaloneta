@@ -12,14 +12,8 @@ function ItemDetail({item}) {
 
   return (
     <div>
-        <div>
-        <h3>{item.name}</h3>
-            <p>{item.question}</p>
-            <p>{item.option1}<input type="checkbox"/></p>
-            <p>{item.option2}<input type="checkbox"/></p>
-            <p>{item.option3}<input type="checkbox"/></p>
-            <p>{item.option4}<input type="checkbox"/></p>
-        </div>
+     
+     {/* Z */}
     </div>
   )
 }

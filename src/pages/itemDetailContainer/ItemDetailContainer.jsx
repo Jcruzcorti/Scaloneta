@@ -1,5 +1,5 @@
 import React from 'react'
-import {useState,useEffect} from 'react'
+// import {useState,useEffect} from 'react'
 // import {Questions1,Questions2,Questions3} from '../../mock/Questions';
 // import { Link, useParams } from 'react-router-dom';
 // import ItemDetail from '../../components/itemDetail/ItemDetail';
@@ -41,9 +41,9 @@ import {useState,useEffect} from 'react'
 function ItemDetailContainer(props) {
 
   
-  // const [questions, setQuestions]=useState([])
+//   const [questions, setQuestions]=useState([])
  
-  // const {categoryId} =useParams()
+//   const {categoryId} =useParams()
  
 //   useEffect(() => {
     
@@ -99,10 +99,10 @@ function ItemDetailContainer(props) {
 
   return (
     <div>
-            {/* <Link className="navli" to="/category/Facil" >FÁCIL</Link>
-            <Link className="navli" to="/category/Dificil" >DIFÍCIL</Link>
-            <Link className="navli" to="/category/Fanatico" >FANÁTICO</Link>
-        <ItemDetail item={questions}/> */}
+      {/* <ItemDetail item={questions}/> */}
+        {/* <Link className="navli" to="/category/Dificil" >FÁCIL</Link>
+        <Link className="navli" to="/category/Dificil" >DIFÍCIL</Link>
+        <Link className="navli" to="/category/Fanatico" >FANÁTICO</Link> */}
     </div>
   )
 }

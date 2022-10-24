@@ -14,6 +14,7 @@ function App() {
       <BrowserRouter>
       <header className="App-header">    
           <img src={LogoAfa} alt="Logo AFA" className='LogoAfa'/>
+          
           {/* <NavBar/>   */}
       </header>
 {/* INTENTAR UTILIZAR CATEGORIAS CON ITEMDETAILCONTAINER, PARA QUE APRETANDO NIVELES DE DIFICULTAD DEL NAVBAR, NAVEGUE AL ITEMDETAIL CON SUS 5 PREGUNTAS CORRESPONDIENTES */}
@@ -21,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ItemListContainer greet="QUIZ DE LA SCALONETA"/>} />
           <Route path="/category/:categoryId" element={<ItemListContainer greet="SELCCIONA TU RESPUESTA"/>} />
-          {/* <Route path="/detail/:itemId" element={<ItemDetailContainer greet="SELCCIONA TU RESPUEsSTA"/>} /> */}
+          {/* <Route path="/detail/:categoryId" element={<ItemDetailContainer greet="SELCCIONA TU RESPUEsSTA"/>} /> */}
         </Routes>
       </section>
 

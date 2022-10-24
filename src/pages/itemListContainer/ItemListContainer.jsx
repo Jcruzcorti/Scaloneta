@@ -1,102 +1,191 @@
 import React from 'react'
+import './itemlistcontainer.css'
 import ItemList from '../../components/itemList/ItemList';
 import {useState,useEffect} from 'react'
-import {Questions1,Questions2,Questions3} from '../../mock/Questions';
-import { Link, useParams } from 'react-router-dom';
+import {Questions} from '../../mock/Questions';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 
 
-function getQuiestions1() {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-        resolve(Questions1)
-    }, 1000)
+// function getQuiestions1() {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//         resolve(Questions1)
+//     }, 1000)
     
-})
-}
-function getQuiestions2() {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-        resolve(Questions2)
-    }, 1000)
+// })
+// }
+// function getQuiestions2() {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//         resolve(Questions2)
+//     }, 1000)
     
-})
-}
-function getQuiestions3() {
-    return new Promise((resolve) => {
+// })
+// }
+// function getQuiestions3() {
+//     return new Promise((resolve) => {
         
-        setTimeout(() => {
-        resolve(Questions3)
-    }, 1000)
+//         setTimeout(() => {
+//         resolve(Questions3)
+//     }, 1000)
     
-})
-}
+// })
+// }
 
-
+// function getQuestions() {
+//     return new Promise((resolve) => {
+        
+//         setTimeout(() => {
+//         resolve(Questions)
+//     }, 1000)
+    
+// })
+// }
 
 
 
  function ItemListContainer(props) {
 
- const [welcome, setWelcome] = useState(true)
- const [questions, setQuestions]=useState([])
-
- const {categoryId} =useParams()
 
 
 
 
- useEffect(() => {
+//  const [welcome, setWelcome] = useState(true)
+//  const [questions, setQuestions]=useState([])
+
+//  const {categoryId} =useParams()
+//  const navigation = useNavigate()
+
+// function asss(params) {
+//     navigation("/category/Facil")
+// }
+//  useEffect(() => {
    
+    // if (Questions) {
+    //     setWelcome(false)
+    //     getQuestions(Questions)
+    //     // navigation("/category/Facil")
+    //     .then((asa)=>setQuestions(asa))
+    // }
+
+    //  if (categoryId==="Facil") {
+    //     setWelcome(false)
+    //     getQuiestions1(categoryId)
+    //     .then((asa)=>setQuestions(asa))
+    // }
+
+    // else if (categoryId==="Dificil"){
+    //     setWelcome(false)
+    //     getQuiestions2(categoryId)
+    //     .then((asa)=>setQuestions(asa))
+    // }
+
+    // else if (categoryId==="Fanatico"){
+    //     setWelcome(false)
+    //     getQuiestions3(categoryId)
+    //     .then((asa)=>setQuestions(asa))
+    // }
+    
+
+// }, [categoryId])
 
 
-     if (categoryId==="Facil") {
-        setWelcome(false)
-        getQuiestions1(categoryId)
-        .then((asa)=>setQuestions(asa))
+const [actualQuestion, setActualQuestion]=useState(0)
+const [score, setScore]=useState(0)
+const [isFinished, setIsFinished ]=useState(false)
+const [timeLeft, setTimeLeft] =useState(15)
+const [finishedTime, setFinishedTime] =useState(false)
+
+
+
+function handleAnswerSubmit(isCorrect,e) {
+    if (isCorrect){
+        // capaz va un e prevent default aca
+        setScore(score + 1)
     }
+    e.target.classList.add(isCorrect ? "correct" : "incorrect")
 
-    else if (categoryId==="Dificil"){
-        setWelcome(false)
-        getQuiestions2(categoryId)
-        .then((asa)=>setQuestions(asa))
-    }
+    setTimeout(()=>{
+        if (actualQuestion === Questions.length - 1){
+            setIsFinished(true)
+        }
+        else {
+            setActualQuestion(actualQuestion + 1);
+        }
+    },1000);
+}
 
-    else if (categoryId==="Fanatico"){
-        setWelcome(false)
-        getQuiestions3(categoryId)
-        .then((asa)=>setQuestions(asa))
-    }
+
+// useEffect(()=>{
     
 
 
-}, [categoryId])
+// }),[timeLeft];
 
 
 
+    if (isFinished)
+    return(
+        <div className='DivPrimary'>
+            <div>
+                <span>Tu puntuación fue {score} respuestas correctas de {Questions.length}</span>
+                <button>Enviar puntuación</button>
+            </div>
 
+        </div>
+    )
 
 
   return (
-    <div>
+    <div className='DivPrimary'>
         
         <h1 className="H1Tittle"> {props.greet}</h1>
-        {        
-            welcome                      
-            ?<>
-                <h3 className="H1Tittle"> Selecciona el nivel fácil para comenzar</h3> 
-                <Link className="navli" to="/category/Facil" >FÁCIL</Link>
-                <Link className="navli" to="/category/Dificil" >DIFÍCIL</Link>
-                <Link className="navli" to="/category/Fanatico" >FANÁTICO</Link>
-                
-                {/* <ItemList items={questions}/> */}
-            </>              
-            :null
-        }
-        <div>
-        <ItemList items={questions}/>
+
+        <div className='DivQuestions'>
+            <div>
+                <span>Pregunta {actualQuestion + 1} de </span> {Questions.length}
+
+            </div>
+            <div className='DivTitle'>
+                {Questions[actualQuestion].question}
+            </div>
+            <div className='DivTime'>
+                <span>Tiempo restante {timeLeft}</span>
+            </div>
         </div>
+
+
+        <div>
+            <div className='DivOptions'>
+                {Questions[actualQuestion].options.map((resp)=>(
+                    <button 
+                        key={resp.option}
+                        onClick={(e)=> handleAnswerSubmit(resp.isCorrect,e)}>
+                    {resp.option}
+                    </button>
+                ))}
+            </div>
+
+        </div>
+        {        
+            // welcome                      
+            // ?<>
+            //     <h3 className="H1Tittle"> Selecciona el nivel fácil para comenzar</h3> 
+            //     {/* <Link className="navli" to="/category/Facil" >Nivel fácil</Link>
+            //     <Link className="navli" to="/category/Dificil" >Nivel difícil</Link>
+            //     <Link className="navli" to="/category/Fanatico" >Nivel fanático</Link> */}
+    
+            //     {/* <Link className="navli" to="/category/Facil" >Comenzar ya</Link> */}
      
+            //     {/* <ItemList items={questions}/> */}
+            // </>              
+            // :null
+            }
+       
+            {/* <div>            
+                <ItemList items={questions}/>         
+            </div> */}
     </div>
 
 )}
