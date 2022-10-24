@@ -94,7 +94,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 const [actualQuestion, setActualQuestion]=useState(0)
 const [score, setScore]=useState(0)
 const [isFinished, setIsFinished ]=useState(false)
-const [timeLeft, setTimeLeft] =useState(15)
+const [timeLeft, setTimeLeft] =useState(5," segundos")
 const [finishedTime, setFinishedTime] =useState(false)
 
 
@@ -117,11 +117,20 @@ function handleAnswerSubmit(isCorrect,e) {
 }
 
 
-// useEffect(()=>{
-    
+useEffect(() => {
+     
+    const interval= setInterval(() => {
+        if (timeLeft>0){
+            setTimeLeft(timeLeft-1)
+        }
+        else if (timeLeft===0){
+            setFinishedTime(true)
+        }
+    }, 1000);
 
+    return () => clearInterval(interval);
 
-// }),[timeLeft];
+},[timeLeft]);
 
 
 
@@ -151,7 +160,16 @@ function handleAnswerSubmit(isCorrect,e) {
                 {Questions[actualQuestion].question}
             </div>
             <div className='DivTime'>
-                <span>Tiempo restante {timeLeft}</span>
+                {
+                    (!finishedTime)
+                    ?<span>Tiempo restante {timeLeft}</span>
+                    :<button onClick={()=>{
+                        setTimeLeft(5)
+                        setFinishedTime(false)
+                        setActualQuestion(actualQuestion + 1)
+                    }}>Siguiente pregunta</button>
+                }
+                
             </div>
         </div>
 
@@ -161,7 +179,8 @@ function handleAnswerSubmit(isCorrect,e) {
                 {Questions[actualQuestion].options.map((resp)=>(
                     <button 
                         key={resp.option}
-                        onClick={(e)=> handleAnswerSubmit(resp.isCorrect,e)}>
+                        onClick={(e)=> handleAnswerSubmit(resp.isCorrect,e)}
+                        disabled={finishedTime}>
                     {resp.option}
                     </button>
                 ))}
