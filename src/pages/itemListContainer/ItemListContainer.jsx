@@ -94,8 +94,9 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 const [actualQuestion, setActualQuestion]=useState(0)
 const [score, setScore]=useState(0)
 const [isFinished, setIsFinished ]=useState(false)
-const [timeLeft, setTimeLeft] =useState(5," segundos")
+const [timeLeft, setTimeLeft] =useState(90 , " segundos")
 const [finishedTime, setFinishedTime] =useState(false)
+const [answersShown, setAnswersShown] =useState(false)
 
 
 
@@ -139,11 +140,45 @@ useEffect(() => {
         <div className='DivPrimary'>
             <div>
                 <span>Tu puntuación fue {score} respuestas correctas de {Questions.length}</span>
-                <button>Enviar puntuación</button>
+                <button
+                onClick={()=>{
+                    setIsFinished(false);
+                    setAnswersShown(true)
+                    setActualQuestion(0)
+                }}>
+                Ver Respuestas</button>
             </div>
 
         </div>
     )
+
+if (answersShown) 
+    return  (<div className='DivPrimary'>
+    <div className='DivQuestions'>
+        <div>
+            <span>Pregunta {actualQuestion + 1} de </span> {Questions.length}
+
+        </div>
+        <div className='DivTitle'>
+            {Questions[actualQuestion].question}
+        </div>
+        <div className='DivAnswer'>
+        {Questions[actualQuestion].options.filter((opt)=>opt.isCorrect)[0].option}
+            
+        </div>
+        <button onClick={()=>{
+              if (actualQuestion === Questions.length - 1){
+                // window.location.href="/"; ESTO ES PARA QUE SE ACTUALICE LA PÁGINA, PERO PODRIA PONER QUE ENVIE ESTOS DATOS A FIREBASE
+            }
+            else {
+                setActualQuestion(actualQuestion + 1);
+            }
+        }}>
+            Continuar
+        </button>
+    </div>
+</div>)
+    
 
 
   return (
@@ -166,7 +201,7 @@ useEffect(() => {
                     :<button onClick={()=>{
                         setTimeLeft(5)
                         setFinishedTime(false)
-                        setActualQuestion(actualQuestion + 1)
+                        setActualQuestion(actualQuestion + 1)                
                     }}>Siguiente pregunta</button>
                 }
                 
@@ -178,7 +213,7 @@ useEffect(() => {
             <div className='DivOptions'>
                 {Questions[actualQuestion].options.map((resp)=>(
                     <button 
-                        key={resp.option}
+                        key={Questions.id}
                         onClick={(e)=> handleAnswerSubmit(resp.isCorrect,e)}
                         disabled={finishedTime}>
                     {resp.option}

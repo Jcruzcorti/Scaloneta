@@ -1,7 +1,7 @@
-.correct{
+.correct.correct:hover{
     background-color: #02ce10;
 }
 
-.incorrect{
+.incorrect.incorrect:hover{
     background-color: #f20b0b;
 }

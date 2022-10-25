@@ -750,7 +750,7 @@ export const Questions = [
                 {option: "Nehuen Pérez", isCorrect: false},
                 {option: "Nicolás Dominguez", isCorrect: false},
                 {option: "Marcos Senesi", isCorrect: true},
-                {ooption: "Thiago Almada", isCorrect: false},
+                {option: "Thiago Almada", isCorrect: false},
             ] 
 
 
