@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useState,useEffect } from 'react'
 import './itemlistcontainer.css'
 import ItemList from '../../components/itemList/ItemList';
-import {useState,useEffect} from 'react'
 import {Questions} from '../../mock/Questions';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import CartModal from '../cartmodal/CartModal';
+import Intermediate from '../component/Intermediate';
+
 
 
 
@@ -94,9 +96,10 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 const [actualQuestion, setActualQuestion]=useState(0)
 const [score, setScore]=useState(0)
 const [isFinished, setIsFinished ]=useState(false)
-const [timeLeft, setTimeLeft] =useState(90 , " segundos")
+const [timeLeft, setTimeLeft] =useState(10 , " segundos")
 const [finishedTime, setFinishedTime] =useState(false)
 const [answersShown, setAnswersShown] =useState(false)
+const [welcome, setWelcome] = useState(true)
 
 
 
@@ -105,7 +108,7 @@ function handleAnswerSubmit(isCorrect,e) {
         // capaz va un e prevent default aca
         setScore(score + 1)
     }
-    e.target.classList.add(isCorrect ? "correct" : "incorrect")
+    // e.target.classList.add(isCorrect ? "correct" : "incorrect")
 
     setTimeout(()=>{
         if (actualQuestion === Questions.length - 1){
@@ -114,7 +117,7 @@ function handleAnswerSubmit(isCorrect,e) {
         else {
             setActualQuestion(actualQuestion + 1);
         }
-    },1000);
+    },500);
 }
 
 
@@ -140,13 +143,19 @@ useEffect(() => {
         <div className='DivPrimary'>
             <div>
                 <span>Tu puntuación fue {score} respuestas correctas de {Questions.length}</span>
-                <button
+                {/* <button
                 onClick={()=>{
                     setIsFinished(false);
                     setAnswersShown(true)
                     setActualQuestion(0)
                 }}>
-                Ver Respuestas</button>
+                Ver Respuestas</button> */}
+                 <>
+                <CartModal  score={score}/>
+          
+                </>
+
+                {/* LO ANTERIOR ES PARA MOSTRARLE AL USUARIO LAS RESPUESTAS CORRECTAS A CADA PREGUNTA */}
             </div>
 
         </div>
@@ -168,7 +177,8 @@ if (answersShown)
         </div>
         <button onClick={()=>{
               if (actualQuestion === Questions.length - 1){
-                // window.location.href="/"; ESTO ES PARA QUE SE ACTUALICE LA PÁGINA, PERO PODRIA PONER QUE ENVIE ESTOS DATOS A FIREBASE
+                
+                // window.location.href="/"; ESTO ES PARA QUE SE ACTUALICE LA PÁGINA, PERO PODRIA PONER QUE ENVIE ESTOS DATOS A FIREBASE Y AGREGAR OTRO BOTON PARA QUE ENVIE DIRECTAMENTE LOS RESULTADOS A FIREBASE EN VEZ DE VER LAS OTRAS RESPUESTAS CORRECTAS
             }
             else {
                 setActualQuestion(actualQuestion + 1);
@@ -185,43 +195,86 @@ if (answersShown)
     <div className='DivPrimary'>
         
         <h1 className="H1Tittle"> {props.greet}</h1>
+          
+                {/* <button onClick={()=>setWelcome(false)}><CartModal score={score}/></button> */}
+                {/* <CartModal score={score} onClick={()=>setWelcome(false)}/>   */}
+             
+          {/* VER SI DEJO ESTE DivSecondary */}
+        <div className='DivSecondary'>  
 
-        <div className='DivQuestions'>
-            <div>
-                <span>Pregunta {actualQuestion + 1} de </span> {Questions.length}
-
-            </div>
-            <div className='DivTitle'>
-                {Questions[actualQuestion].question}
-            </div>
-            <div className='DivTime'>
-                {
-                    (!finishedTime)
-                    ?<span>Tiempo restante {timeLeft}</span>
-                    :<button onClick={()=>{
-                        setTimeLeft(5)
-                        setFinishedTime(false)
-                        setActualQuestion(actualQuestion + 1)                
-                    }}>Siguiente pregunta</button>
+            <div className='DivQuestions'>
+                    <div>
+                        {
+                            (!finishedTime)
+                            ?<><span>Pregunta {actualQuestion + 1} de </span> {Questions.length}</>
+                            :null
+                        }
+        
+                    </div>
+                    <div className='DivTitle'>
+                        {
+                            (!finishedTime)
+                            ?<> {Questions[actualQuestion].question}</>
+                            :null
+                        }
+                        
+                    </div>
+                    <div className='DivTime'>
+                        {
+                            (!finishedTime)
+                            ?<span>Tiempo restante {timeLeft}</span>
+                            // :<button onClick={()=>{
+                            //     setTimeLeft(5)
+                            //     setFinishedTime(false)
+                            //     setActualQuestion(actualQuestion + 1)                
+                            // }}>Siguiente pregunta</button>
+                            :<>
+                            {/* <span>Tu puntuación fue {score} respuestas correctas de {Questions.length}</span> */}
+                            <CartModal  score={score}/>
+                            </>
+                        }
+                        {/* if (timeLeft>0){
+                    setTimeLeft(timeLeft-1)
                 }
-                
+                else if (timeLeft===0){
+                    setFinishedTime(true)
+                } */}
+                    </div>
+                </div>
+        
+        
+                <div>
+                    <div className='DivOptions'>
+                    {
+                            (!finishedTime)
+                            ?<> {Questions[actualQuestion].options.map((resp)=>(
+                                <button 
+                                    key={Questions.id}
+                                    onClick={(e)=> handleAnswerSubmit(resp.isCorrect,e)}
+                                    disabled={finishedTime}>
+                                {resp.option}
+                            </button>
+                        ))}</>
+                            :null
+                        }
+                       
+                </div>
+        
             </div>
-        </div>
+    
+        </div>   
+          
 
-
-        <div>
-            <div className='DivOptions'>
-                {Questions[actualQuestion].options.map((resp)=>(
-                    <button 
-                        key={Questions.id}
-                        onClick={(e)=> handleAnswerSubmit(resp.isCorrect,e)}
-                        disabled={finishedTime}>
-                    {resp.option}
-                    </button>
-                ))}
-            </div>
-
-        </div>
+                             {/* <button onClick={()=>{
+                                setIsFinished(false);
+                                setAnswersShown(true)
+                                setActualQuestion(0)
+                            }}>
+                            Ver Respuestas</button>
+                            ESTE BOTON ES PARA MOSTRAR LAS RESPUESTAS CORRECTAS */}
+                          
+            
+        
         {        
             // welcome                      
             // ?<>
