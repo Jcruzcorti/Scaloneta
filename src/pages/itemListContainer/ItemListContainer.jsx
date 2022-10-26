@@ -4,102 +4,20 @@ import ItemList from '../../components/itemList/ItemList';
 import {Questions} from '../../mock/Questions';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import CartModal from '../cartmodal/CartModal';
-import Intermediate from '../component/Intermediate';
 
-
-
-
-// function getQuiestions1() {
-//     return new Promise((resolve) => {
-//         setTimeout(() => {
-//         resolve(Questions1)
-//     }, 1000)
-    
-// })
-// }
-// function getQuiestions2() {
-//     return new Promise((resolve) => {
-//         setTimeout(() => {
-//         resolve(Questions2)
-//     }, 1000)
-    
-// })
-// }
-// function getQuiestions3() {
-//     return new Promise((resolve) => {
-        
-//         setTimeout(() => {
-//         resolve(Questions3)
-//     }, 1000)
-    
-// })
-// }
-
-// function getQuestions() {
-//     return new Promise((resolve) => {
-        
-//         setTimeout(() => {
-//         resolve(Questions)
-//     }, 1000)
-    
-// })
-// }
 
 
 
  function ItemListContainer(props) {
 
 
-
-
-
-//  const [welcome, setWelcome] = useState(true)
-//  const [questions, setQuestions]=useState([])
-
-//  const {categoryId} =useParams()
-//  const navigation = useNavigate()
-
-// function asss(params) {
-//     navigation("/category/Facil")
-// }
-//  useEffect(() => {
-   
-    // if (Questions) {
-    //     setWelcome(false)
-    //     getQuestions(Questions)
-    //     // navigation("/category/Facil")
-    //     .then((asa)=>setQuestions(asa))
-    // }
-
-    //  if (categoryId==="Facil") {
-    //     setWelcome(false)
-    //     getQuiestions1(categoryId)
-    //     .then((asa)=>setQuestions(asa))
-    // }
-
-    // else if (categoryId==="Dificil"){
-    //     setWelcome(false)
-    //     getQuiestions2(categoryId)
-    //     .then((asa)=>setQuestions(asa))
-    // }
-
-    // else if (categoryId==="Fanatico"){
-    //     setWelcome(false)
-    //     getQuiestions3(categoryId)
-    //     .then((asa)=>setQuestions(asa))
-    // }
-    
-
-// }, [categoryId])
-
-
 const [actualQuestion, setActualQuestion]=useState(0)
 const [score, setScore]=useState(0)
 const [isFinished, setIsFinished ]=useState(false)
-const [timeLeft, setTimeLeft] =useState(10 , " segundos")
+const [timeLeft, setTimeLeft] =useState(90)
 const [finishedTime, setFinishedTime] =useState(false)
 const [answersShown, setAnswersShown] =useState(false)
-const [welcome, setWelcome] = useState(true)
+
 
 
 
@@ -142,7 +60,13 @@ useEffect(() => {
     return(
         <div className='DivPrimary'>
             <div>
-                <span>Tu puntuación fue {score} respuestas correctas de {Questions.length}</span>
+
+            <h1 className="H1Tittle"> {props.greet}</h1>    
+                {/* <span>Tu puntuación fue {score} respuestas correctas de {Questions.length}</span> */}
+
+
+
+
                 {/* <button
                 onClick={()=>{
                     setIsFinished(false);
@@ -230,6 +154,7 @@ if (answersShown)
                             // }}>Siguiente pregunta</button>
                             :<>
                             {/* <span>Tu puntuación fue {score} respuestas correctas de {Questions.length}</span> */}
+                            <p>Se terminó el tiempo</p>
                             <CartModal  score={score}/>
                             </>
                         }
