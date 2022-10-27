@@ -1,10 +1,8 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import {addDoc, collection, getFirestore, Timestamp} from 'firebase/firestore'
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyCijWki-jNWEQH92-j1vDFvB0JI0S6qtWI",
   authDomain: "scaloneta-2b2e2.firebaseapp.com",
@@ -22,7 +20,7 @@ const appFirestore = getFirestore(appFirebase);
     export async function quizAnswer(dataAnswer){
 
 
-    const quizCollection = collection(appFirestore, "answers")
+    const quizCollection = collection(appFirestore, "answers2")
     const dataTimeStamp = Timestamp.now()
     const answersWidthDate = {
         player: dataAnswer.player,

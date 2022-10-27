@@ -1,110 +1,141 @@
-import React from 'react'
-// import {useState,useEffect} from 'react'
-// import {Questions1,Questions2,Questions3} from '../../mock/Questions';
-// import { Link, useParams } from 'react-router-dom';
-// import ItemDetail from '../../components/itemDetail/ItemDetail';
+import React, {useState,useEffect } from 'react'
+import {Questions} from '../../mock/Questions';
+import CartModal from '../cartmodal/CartModal';
 
 
 
 
+ function ItemDetailContainer(props) {
 
 
-// function getQuiestions1() {
-//     return new Promise((resolve) => {
-//         setTimeout(() => {
-//         resolve(Questions1)
-//     }, 1000)
-    
-// })
-// }
-// function getQuiestions2() {
-//     return new Promise((resolve) => {
-//         setTimeout(() => {
-//         resolve(Questions2)
-//     }, 1000)
-    
-// })
-// }
-// function getQuiestions3() {
-//     return new Promise((resolve) => {
+    const [actualQuestion, setActualQuestion]=useState(0)
+    const [score, setScore]=useState(0)
+    const [isFinished, setIsFinished ]=useState(false)
+    const [timeLeft, setTimeLeft] =useState(20)
+    const [finishedTime, setFinishedTime] =useState(false)
+
+
+
+    function handleAnswerSubmit(isCorrect,e) {
+        if (isCorrect){
+            setScore(score + 1)
+        }
+        // e.target.classList.add(isCorrect ? "correct" : "incorrect")
+
+        setTimeout(()=>{
+            if (actualQuestion === Questions.length - 1){
+                setIsFinished(true)
+            }
+            else {
+                setActualQuestion(actualQuestion + 1);
+            }
+        },500);
+    }
+
+
+
+    useEffect(() => {
+
+        const interval= setInterval(() => {
+          
+            if (timeLeft>0){
+                setTimeLeft(timeLeft-1)
+            }
+            else if (timeLeft===0){
+                setFinishedTime(true)
+            }
+        }, 1000);
         
-//         setTimeout(() => {
-//         resolve(Questions3)
-//     }, 1000)
+        return () => clearInterval(interval);          
+        
+    },[timeLeft]);
+
+
+
+    if (isFinished)
+    return(
+        <div className='DivPrimary'>
+          <div>
+            <h1 className="H1Tittle"> {props.greet}</h1>     
+            <CartModal  score={score}/> 
+          </div>
+        </div>
+    )
     
-// })
-// }
 
 
-
-
-function ItemDetailContainer(props) {
-
-  
-//   const [questions, setQuestions]=useState([])
- 
-//   const {categoryId} =useParams()
- 
-//   useEffect(() => {
-    
- 
-//     if (categoryId==="Facil") {
-      
-//       getQuiestions1(categoryId)
-//       .then((asa)=>setQuestions(asa))
-//   }
-
-//   else if (categoryId==="Dificil"){
-     
-//       getQuiestions2(categoryId)
-//       .then((asa)=>setQuestions(asa))
-//   }
-
-//   else if (categoryId==="Fanatico"){
-    
-//       getQuiestions3(categoryId)
-//       .then((asa)=>setQuestions(asa))
-//   }
-  
-
-
-// }, [categoryId])
-
- 
-    //   if (itemId<=5) {
-         
-    //      getQuiestions1(itemId)
-    //      .then((asa)=>setQuestions(asa))
-    //  }
- 
-    //  else if (itemId > 5 && itemId <= 10){
-         
-    //      getQuiestions2(itemId)
-    //      .then((asa)=>setQuestions(asa))
-    //  }
- 
-    //  else if (itemId > 10 && itemId <= 15){
-         
-    //      getQuiestions3(itemId)
-    //      .then((asa)=>setQuestions(asa))
-    //  }
-     
- 
- 
-//  }, [itemId])
- 
- 
-  
-   
 
   return (
-    <div>
-      {/* <ItemDetail item={questions}/> */}
-        {/* <Link className="navli" to="/category/Dificil" >FÁCIL</Link>
-        <Link className="navli" to="/category/Dificil" >DIFÍCIL</Link>
-        <Link className="navli" to="/category/Fanatico" >FANÁTICO</Link> */}
+    <div className='DivPrimary'>
+        
+      <h1 className="H1Tittle"> {props.greet}</h1>
+  
+      <div className='DivSecondary'>  
+        <div className='DivQuestions'>
+
+        <div>
+            {
+              (!finishedTime)
+              ?<><span>Pregunta {actualQuestion + 1} de </span> {Questions.length}</>
+              :null
+            }
+
+        </div>
+        
+        <div className='DivTitle'>
+            {
+              (!finishedTime)
+              ?<> {Questions[actualQuestion].question}</>
+              :null
+            }
+                            
+        </div>
+
+        <div className='DivTime'>
+            {
+                (!finishedTime)
+                ?<span>Tiempo restante {timeLeft} segundos</span>
+                :<>
+                  <p>Se terminó el tiempo</p>
+                  <CartModal  score={score}/>
+                </>
+            }
+
+        </div>
+        </div>
+
+
+      <div>
+      <div className='DivOptions'>
+        {
+                (!finishedTime)
+                ?<> {Questions[actualQuestion].options.map((resp)=>(
+                    <button 
+                        key={Questions.id}
+                        onClick={(e)=> handleAnswerSubmit(resp.isCorrect,e)}
+                        disabled={finishedTime}>
+                    {resp.option}
+                </button>
+            ))}</>
+                :null
+            }
+                        
+      </div>
+
+      </div>
+
+      </div>   
+
+                             {/* <button onClick={()=>{
+                                setIsFinished(false);
+                                setAnswersShown(true)
+                                setActualQuestion(0)
+                            }}>
+                            Ver Respuestas</button>
+                            ESTE BOTON ES PARA MOSTRAR LAS RESPUESTAS CORRECTAS */}
+
     </div>
-  )
-}
+
+)}
 
 export default ItemDetailContainer;

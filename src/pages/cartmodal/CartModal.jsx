@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { Questions } from '../../mock/Questions';
 import Swal from 'sweetalert2'
 import {quizAnswer} from '../../service/Firestore'
-import {useNavigate} from 'react-router-dom'
 import picture from '../../img/messicampeon.png'
 import picture2 from '../../img/messiaprueba.png'
 import picture3 from '../../img/messitriste.png'
@@ -20,7 +18,6 @@ function CartModal({score}) {
   const handleShow = () => setShow(true);
 
 
-  // const navigation = useNavigate();
 
   const [player,setPlayer] = useState({
     name:""
@@ -36,9 +33,8 @@ function CartModal({score}) {
     }
 
 
-  //  const score2 = JSON.stringify([new Number({score})])
   const score2 = JSON.stringify(score)
-  // const picture2 = JSON.stringify(picture)
+
 
     function handleFin(e) {
       e.preventDefault();
@@ -69,14 +65,10 @@ function CartModal({score}) {
 
       else {
         quizAnswer(dataAnswer).then((answerCreated)=>{
-          // <><span>Pregunta {actualQuestion + 1} de </span> {Questions.length}</>
-          console.log(answerCreated.id);
-          
 
           if (score<=5) {
             Swal.fire({
               title: 'Obtuviste una puntuación de ' + score2 + ' respuestas correctas y pusiste triste a Messi.', 
-              // text: score2 + "Puntos sobre 15",
               imageUrl: `${picture3}`,
               imageWidth: 400,
               imageHeight: 250,
@@ -87,7 +79,6 @@ function CartModal({score}) {
           else if (score>5 && score2<=10){
             Swal.fire({
               title: 'Obtuviste una puntuación de ' + score2 + ' respuestas correctas y Messi te aprueba.',
-              // text: score2 + "Puntos sobre 15",
               imageUrl: `${picture2}`,
               imageWidth: 400,
               imageHeight: 250,
@@ -107,14 +98,14 @@ function CartModal({score}) {
             })
           }
         
-          
-          
+          handleClose()
+          setTimeout(() => {
+            window.location.href="/";
+          }, 4000);
+         
 
           
         });
-        // <><span>Pregunta {actualQuestion + 1} de </span> {Questions.length}</>
-        // ACA VA UN SWEET ALERT QUE MUESTRE PUNTAJE CON MESSI CAMPEON, SONRIENDO, O LLORANDO
-        
       }
     }
 
@@ -140,8 +131,7 @@ function CartModal({score}) {
           <div >
           <form>
             <div className="form-group">
-                {/* <label htmlFor="formGroupExampleInput">Nombre completo</label> */}
-                <input onChange={handleChange} type="text" name='name' className="form-control" id="formGroupExampleInput" placeholder="Nombre completo" aria-required/>
+              <input onChange={handleChange} type="text" name='name' className="form-control" id="formGroupExampleInput" placeholder="Nombre completo" aria-required/>
             </div>
           </form>
         </div>
@@ -157,6 +147,5 @@ function CartModal({score}) {
     </>
   );
 
-  // HACER QUE CUANDO ENVIA INFO CON EL MODAL, SE RENDERICE UNA FOTO DE MESSI DE ACUERDO A SU PUNTUACIÓN CON LAS RESPUESTAS CORRECTAS
 }
 export default CartModal;
