@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+# Welcome to Quiz Scaloneta!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project consists of a quiz game about the Argentine national football team.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Project details:
+The web, consists of a home page, in which they are with a button to start the game, which pressing it starts the game. Then the player has 120 seconds to answer the total of 15 questions about the Scaloneta (nickname of the Argentina National Team led by DT Lionel Scaloni). If the time available ends, as well as if the player finishes the questionnaire, a button appears to know the result, which directs to a modal in which the player has to attach his name in order to know his score. When sending the modal, both the player's name and score are automatically sent to Firestore/Firebase to record the data in question.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Steps to view the site
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In our default terminal, we clone the folder by typing "git clone" + link:
 
-### `npm run build`
+1- git clone https://github.com/Jcruzcorti/Scaloneta
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2- Then, we place ourselves in the root folder of the project, with the command "cd SCALONETA" and install all the dependencies inside with the command "npm install".
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3-Finally, in the terminal we carry out the command "npm start" and the web will open in the predetermined browser after a few seconds/minutes of waiting.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
