@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+import './cartmodal.css'
 import Modal from 'react-bootstrap/Modal';
 import Swal from 'sweetalert2'
 import {quizAnswer} from '../../service/Firestore'
@@ -70,20 +70,22 @@ function CartModal({score}) {
             Swal.fire({
               title: 'Obtuviste una puntuación de ' + score2 + ' respuestas correctas y pusiste triste a Messi.', 
               imageUrl: `${picture3}`,
-              imageWidth: 400,
-              imageHeight: 250,
+              // imageWidth: 400,
+              // imageHeight: 250,
+              imageWidth: `80%`,
+              imageHeight: `80%`,
               imageAlt: 'Messi desepcionado',
-              
+              showConfirmButton:false,
             })
           }
           else if (score>5 && score2<=10){
             Swal.fire({
               title: 'Obtuviste una puntuación de ' + score2 + ' respuestas correctas y Messi te aprueba.',
               imageUrl: `${picture2}`,
-              imageWidth: 400,
-              imageHeight: 250,
+              imageWidth: `80%`,
+              imageHeight: `80%`,
               imageAlt: 'Messi aprueba',
-              
+              showConfirmButton:false,
             })
           }
 
@@ -91,10 +93,10 @@ function CartModal({score}) {
             Swal.fire({
               title: 'Obtuviste una puntuación de ' + score2 + ' respuestas correctas y sacaste campeón a Lionel.',
               imageUrl: `${picture}`,
-              imageWidth: 300,
-              imageHeight: 250,
+              imageWidth: `80%`,
+              imageHeight: `80%`,
               imageAlt: 'Messi campeón',
-              
+              showConfirmButton:false,
             })
           }
         
@@ -113,9 +115,9 @@ function CartModal({score}) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <button className='ButtonStart' onClick={handleShow}>
         Ver puntuación
-      </Button>
+      </button>
 
       <Modal
         show={show}
@@ -124,24 +126,30 @@ function CartModal({score}) {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Ingrese su nombre para conocer su puntuación</Modal.Title>
+      
+            <Modal.Title>Ingrese su nombre para ver su puntuación</Modal.Title>
+          
+          
         </Modal.Header>
         <Modal.Body>
       
           <div >
           <form>
             <div className="form-group">
-              <input onChange={handleChange} type="text" name='name' className="form-control" id="formGroupExampleInput" placeholder="Nombre completo" aria-required/>
+            <Modal.Title>
+               <input onChange={handleChange} type="text" name='name' className="form-control" id="formGroupExampleInput" placeholder="Nombre completo" aria-required/>
+            </Modal.Title>
+   
             </div>
           </form>
         </div>
 
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <button className='ButtonModal' onClick={handleClose}>
             Cerrar
-          </Button>
-          <Button variant="primary" onClick={handleFin}>Enviar</Button>
+          </button>
+          <button className='ButtonModal'onClick={handleFin}>Enviar</button>
         </Modal.Footer>
       </Modal>
     </>

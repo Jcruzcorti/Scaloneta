@@ -20,7 +20,7 @@ const appFirestore = getFirestore(appFirebase);
     export async function quizAnswer(dataAnswer){
 
 
-    const quizCollection = collection(appFirestore, "answers2")
+    const quizCollection = collection(appFirestore, "answers3")
     const dataTimeStamp = Timestamp.now()
     const answersWidthDate = {
         player: dataAnswer.player,

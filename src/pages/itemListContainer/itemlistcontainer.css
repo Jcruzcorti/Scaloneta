@@ -1,7 +1,60 @@
-.correct.correct:hover{
-    background-color: #02ce10;
+.DivStart{
+    margin-top: 50px;
 }
 
-.incorrect.incorrect:hover{
-    background-color: #f20b0b;
+
+.H1Tittle{
+    font-size: 50px;
+}
+
+.ButtonStart{
+    margin-top: 50px;
+    font-size: 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #8bbcf5;
+    color: #000000;
+    border-radius: 5px;
+    filter: drop-shadow(1.5px 1.5px 2px #020212);
+    /* box-shadow: 2px 2px 2px 1px #7fb4f2; */
+    text-align: center;
+    /* padding: 0; */
+}
+.ButtonStart:hover{
+    background-color: #93c1f6;
+    /* background-color: #7fb4f2; */
+}
+
+
+
+@media screen and (max-width: 768px){
+
+    .DivStart{
+        margin-top: 50px;
+    }
+    
+    
+    .H1Tittle{
+        font-size: 26px;
+        
+    }
+    
+    .ButtonStart{
+        margin-top: 30px;
+        font-size: 16px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: #8bbcf5;
+        color: #000000;
+        border-radius: 5px;
+        filter: drop-shadow(1.5px 1.5px 2px #020212);
+        /* box-shadow: 2px 2px 2px 1px #7fb4f2; */
+        text-align: center;
+        /* padding: 0; */
+    }
+    .ButtonStart:hover{
+        background-color: none;
+        /* background-color: #7fb4f2; */
+    }
+    
+    
+
 }

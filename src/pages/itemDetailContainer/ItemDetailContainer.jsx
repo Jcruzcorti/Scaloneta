@@ -1,6 +1,7 @@
 import React, {useState,useEffect } from 'react'
 import {Questions} from '../../mock/Questions';
 import CartModal from '../cartmodal/CartModal';
+import './itemdetailcontainer.css'
 
 
 
@@ -11,7 +12,7 @@ import CartModal from '../cartmodal/CartModal';
     const [actualQuestion, setActualQuestion]=useState(0)
     const [score, setScore]=useState(0)
     const [isFinished, setIsFinished ]=useState(false)
-    const [timeLeft, setTimeLeft] =useState(20)
+    const [timeLeft, setTimeLeft] =useState(120)
     const [finishedTime, setFinishedTime] =useState(false)
 
 
@@ -21,15 +22,14 @@ import CartModal from '../cartmodal/CartModal';
             setScore(score + 1)
         }
         // e.target.classList.add(isCorrect ? "correct" : "incorrect")
-
-        setTimeout(()=>{
+        // setTimeout(()=>{
             if (actualQuestion === Questions.length - 1){
                 setIsFinished(true)
             }
             else {
                 setActualQuestion(actualQuestion + 1);
             }
-        },500);
+        // },500);
     }
 
 
@@ -70,13 +70,13 @@ import CartModal from '../cartmodal/CartModal';
         
       <h1 className="H1Tittle"> {props.greet}</h1>
   
-      <div className='DivSecondary'>  
+      {/* <div className='DivSecondary'>   */}
         <div className='DivQuestions'>
 
         <div>
             {
               (!finishedTime)
-              ?<><span>Pregunta {actualQuestion + 1} de </span> {Questions.length}</>
+              ?<><p>Pregunta {actualQuestion + 1} de {Questions.length}</p></>
               :null
             }
 
@@ -85,7 +85,7 @@ import CartModal from '../cartmodal/CartModal';
         <div className='DivTitle'>
             {
               (!finishedTime)
-              ?<> {Questions[actualQuestion].question}</>
+              ?<><p className='PQuestion'> {Questions[actualQuestion].question}</p></>
               :null
             }
                             
@@ -94,7 +94,7 @@ import CartModal from '../cartmodal/CartModal';
         <div className='DivTime'>
             {
                 (!finishedTime)
-                ?<span>Tiempo restante {timeLeft} segundos</span>
+                ?<p>Tiempo restante {timeLeft} segundos</p>
                 :<>
                   <p>Se terminó el tiempo</p>
                   <CartModal  score={score}/>
@@ -105,26 +105,37 @@ import CartModal from '../cartmodal/CartModal';
         </div>
 
 
-      <div>
+     
       <div className='DivOptions'>
         {
-                (!finishedTime)
-                ?<> {Questions[actualQuestion].options.map((resp)=>(
-                    <button 
-                        key={Questions.id}
+            (!finishedTime)
+            ?<>
+                {Questions[actualQuestion].options.map((resp,index)=>(                   
+                <button className='ButtonOption'
+                    key={index}
                         onClick={(e)=> handleAnswerSubmit(resp.isCorrect,e)}
                         disabled={finishedTime}>
                     {resp.option}
                 </button>
-            ))}</>
-                :null
-            }
+                // <ButtonKey  className='ButtonOption'
+                // key={Questions.id}
+                // onClick={(e)=> handleAnswerSubmit(resp.isCorrect,e)}
+                // disabled={finishedTime}> 
+                // {resp.option}
+                // </ButtonKey>
+               
+            ))}
+            </>
+                   
+            :null
+ 
+        }
                         
       </div>
 
-      </div>
-
-      </div>   
+     
+{/* 
+      </div>    */}
 
                              {/* <button onClick={()=>{
                                 setIsFinished(false);
