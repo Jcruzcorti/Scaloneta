@@ -5,7 +5,6 @@ import './itemdetailcontainer.css'
 
 
 
-
  function ItemDetailContainer(props) {
 
 
@@ -69,8 +68,6 @@ import './itemdetailcontainer.css'
     <div className='DivPrimary'>
         
       <h1 className="H1Tittle"> {props.greet}</h1>
-  
-      {/* <div className='DivSecondary'>   */}
         <div className='DivQuestions'>
 
         <div>
@@ -117,34 +114,11 @@ import './itemdetailcontainer.css'
                         disabled={finishedTime}>
                     {resp.option}
                 </button>
-                // <ButtonKey  className='ButtonOption'
-                // key={Questions.id}
-                // onClick={(e)=> handleAnswerSubmit(resp.isCorrect,e)}
-                // disabled={finishedTime}> 
-                // {resp.option}
-                // </ButtonKey>
-               
             ))}
-            </>
-                   
+            </>                  
             :null
- 
-        }
-                        
+        }                       
       </div>
-
-     
-{/* 
-      </div>    */}
-
-                             {/* <button onClick={()=>{
-                                setIsFinished(false);
-                                setAnswersShown(true)
-                                setActualQuestion(0)
-                            }}>
-                            Ver Respuestas</button>
-                            ESTE BOTON ES PARA MOSTRAR LAS RESPUESTAS CORRECTAS */}
-
     </div>
 
 )}

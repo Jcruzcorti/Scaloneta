@@ -70,8 +70,6 @@ function CartModal({score}) {
             Swal.fire({
               title: 'Obtuviste una puntuación de ' + score2 + ' respuestas correctas y pusiste triste a Messi.', 
               imageUrl: `${picture3}`,
-              // imageWidth: 400,
-              // imageHeight: 250,
               imageWidth: `80%`,
               imageHeight: `80%`,
               imageAlt: 'Messi desepcionado',
@@ -103,10 +101,7 @@ function CartModal({score}) {
           handleClose()
           setTimeout(() => {
             window.location.href="/";
-          }, 4000);
-         
-
-          
+          }, 4000); 
         });
       }
     }
@@ -125,11 +120,8 @@ function CartModal({score}) {
         backdrop="static"
         keyboard={false}
       >
-        <Modal.Header closeButton>
-      
-            <Modal.Title>Ingrese su nombre para ver su puntuación</Modal.Title>
-          
-          
+        <Modal.Header closeButton>    
+          <Modal.Title>Ingrese su nombre para ver su puntuación</Modal.Title>
         </Modal.Header>
         <Modal.Body>
       

@@ -15,13 +15,10 @@
     color: #000000;
     border-radius: 5px;
     filter: drop-shadow(1.5px 1.5px 2px #020212);
-    /* box-shadow: 2px 2px 2px 1px #7fb4f2; */
     text-align: center;
-    /* padding: 0; */
 }
 .ButtonStart:hover{
     background-color: #93c1f6;
-    /* background-color: #7fb4f2; */
 }
 
 
@@ -46,15 +43,10 @@
         color: #000000;
         border-radius: 5px;
         filter: drop-shadow(1.5px 1.5px 2px #020212);
-        /* box-shadow: 2px 2px 2px 1px #7fb4f2; */
         text-align: center;
-        /* padding: 0; */
     }
     .ButtonStart:hover{
         background-color: none;
-        /* background-color: #7fb4f2; */
     }
-    
-    
 
 }

@@ -5,7 +5,6 @@ export const Questions = [
         name: "1-",
         name2: "Fácil",
         category: 'Facil',
-        // img: '../../img/tiemposg.png',
         img: 'Acá va la url de la imagen o la ruta de la misma',
         question: '¿Quién es el actual director técnico de la selección Argentina?',
         options: [
@@ -22,7 +21,6 @@ export const Questions = [
         name: "2-",
         name2: "Fácil",
         category: 'Facil',
-        // img: '../../img/tiemposg.png',
         img: 'Acá va la url de la imagen o la ruta de la misma',
         question: '¿Cuál es el primer nombre del "Dibu" Martinez?',
         options: [
@@ -40,7 +38,6 @@ export const Questions = [
         name: "3-",
         name2: "Fácil",
         category: 'Facil',
-        // img: '../../img/tiemposg.png',
         img: 'Acá va la url de la imagen o la ruta de la misma',
         question: '¿A qué futbolista de la selección se le atribuye el famoso "Baila como el papu"?',
         options: [
@@ -58,7 +55,6 @@ export const Questions = [
         name: "4-",
         name2: "Fácil",
         category: 'Facil',
-        // img: '../../img/tiemposg.png',
         img: 'Acá va la url de la imagen o la ruta de la misma',
         question: '¿A qué jugador de la selección lo apodan el "Toro"?', 
             options: [
@@ -76,7 +72,6 @@ export const Questions = [
         name: "5-",
         name2: "Fácil",
         category: 'Facil',
-        // img: '../../img/tiemposg.png',
         img: 'Acá va la url de la imagen o la ruta de la misma',
         question: '¿Quién de estos futbolistas no jugó nunca en Boca jrs?', 
             options: [
@@ -94,7 +89,6 @@ export const Questions = [
         name: "6-",
         category: 'Dificil',
         name2: "Díficil",
-        // img: '../../img/tiemposg.png',
         img: 'Acá va la url de la imagen o la ruta de la misma',
         question: '¿Quién fue el máximo goleador de la scaloneta hasta el mundial 2022?', 
             options: [
@@ -111,7 +105,6 @@ export const Questions = [
         name: "7-",
         name2: "Díficil",
         category: 'Dificil',
-        // img: '../../img/tiemposg.png',
         img: 'Acá va la url de la imagen o la ruta de la misma',
         question: '¿En qué club nunca jugó Giovani Lo Celso?', 
             options: [
@@ -129,7 +122,6 @@ export const Questions = [
         name: "8-",
         name2: "Díficil",
         category: 'Dificil',
-        // img: '../../img/tiemposg.png',
         img: 'Acá va la url de la imagen o la ruta de la misma',
         question: '¿Quién tiene el número 19 en la camiseta de la selección?', 
             options: [
@@ -147,7 +139,6 @@ export const Questions = [
         name: "9-",
         name2: "Díficil",
         category: 'Dificil',
-        // img: '../../img/tiemposg.png',
         img: 'Acá va la url de la imagen o la ruta de la misma',
         question: '¿Cuál de los siguientes jugadores no debutó en Estudiantes de la Plata?', 
             options: [
@@ -163,7 +154,6 @@ export const Questions = [
         name: "10-",
         name2: "Díficil",
         category: 'Dificil',
-        // img: '../../img/tiemposg.png',
         img: 'Acá va la url de la imagen o la ruta de la misma',
         question: '¿Qué combinación de futbolistas jugaron alguna vez en River Plate?', 
             options: [
@@ -182,7 +172,6 @@ export const Questions = [
         name: "11-",
         name2: "Fanático",
         category: 'Fanatico',
-        // img: '../../img/tiemposg.png',
         img: 'Acá va la url de la imagen o la ruta de la misma',
         question: '¿Qué combinación de jugadores son todos patrocinados por Nike?', 
             options: [
@@ -201,7 +190,6 @@ export const Questions = [
         name: "12-",
         name2: "Fanático",
         category: 'Fanatico',
-        // img: '../../img/tiemposg.png',
         img: 'Acá va la url de la imagen o la ruta de la misma',
         question: '¿Cuál de los siguientes jugadores no convirtió gol en la era Scaloni?', 
             options: [
@@ -219,7 +207,6 @@ export const Questions = [
         name: "13-",
         name2: "Fanático",
         category: 'Fanatico',
-        // img: '../../img/tiemposg.png',
         img: 'Acá va la url de la imagen o la ruta de la misma',
         question: '¿Qué jugador no nació en Buenos Aires?', 
             options: [
@@ -236,7 +223,6 @@ export const Questions = [
         name: "14-",
         name2: "Fanático",
         category: 'Fanatico',
-        // img: '../../img/tiemposg.png',
         img: 'Acá va la url de la imagen o la ruta de la misma',
         question: '¿Cuál de los siguientes jugadores tiene como pie hábil la zurda?', 
             options: [
@@ -254,7 +240,6 @@ export const Questions = [
         name: "15-",
         name2: "Fanático",
         category: 'Fanatico',
-        // img: '../../img/tiemposg.png',
         img: 'Acá va la url de la imagen o la ruta de la misma',
         question: '¿Quiénes convirtieron en la finalissima vs Italia en Wembley?', 
         options: [

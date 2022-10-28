@@ -1,16 +1,3 @@
-/* .DivSecondary{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    padding: 15px;
-    border: 0.5px solid #000000;
-    border-radius: 1px;
-    box-shadow: 1px 1px 4px 0.5px #000000;
-} */
-
-
 .DivOptions{
     display: flex;
     flex-direction: column;
@@ -27,10 +14,8 @@
     color: #000000;
     border: 1px solid #000000;
     border-radius: 2px;
-    /* filter: drop-shadow(0.5px 0.5px 1px #020212); */
     box-shadow: 0.5px 0.5px 2.5px 0px #000000;
     text-align: center;
-    /* padding: 0; */
     width: auto;
 }
 
@@ -46,7 +31,6 @@ p{
 
 .PQuestion{
     font-family: 'Noto Serif Telugu', serif;
-    /* font-weight:800; */
     font-size: 24px;
 }
 
@@ -71,10 +55,8 @@ p{
         color: #000000;
         border: 1px solid #000000;
         border-radius: 2px;
-        /* filter: drop-shadow(0.5px 0.5px 1px #020212); */
         box-shadow: 0.5px 0.5px 2.5px 0px #000000;
         text-align: center;
-        /* padding: 0; */
     }
 
     .ButtonOption:hover{
@@ -89,7 +71,6 @@ p{
 
     .PQuestion{
         font-family: 'Noto Serif Telugu', serif;
-        /* font-weight:800; */
         font-size: 18px;
     }
 
