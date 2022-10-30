@@ -11,7 +11,7 @@ import './itemdetailcontainer.css'
     const [actualQuestion, setActualQuestion]=useState(0)
     const [score, setScore]=useState(0)
     const [isFinished, setIsFinished ]=useState(false)
-    const [timeLeft, setTimeLeft] =useState(120)
+    const [timeLeft, setTimeLeft] =useState(100)
     const [finishedTime, setFinishedTime] =useState(false)
 
 

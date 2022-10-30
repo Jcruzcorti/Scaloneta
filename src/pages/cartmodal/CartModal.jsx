@@ -76,7 +76,7 @@ function CartModal({score}) {
               showConfirmButton:false,
             })
           }
-          else if (score>5 && score2<=10){
+          else if (score>5 && score2<=7){
             Swal.fire({
               title: 'Obtuviste una puntuación de ' + score2 + ' respuestas correctas y Messi te aprueba.',
               imageUrl: `${picture2}`,
@@ -87,7 +87,7 @@ function CartModal({score}) {
             })
           }
 
-          else if (score>10){
+          else if (score>7){
             Swal.fire({
               title: 'Obtuviste una puntuación de ' + score2 + ' respuestas correctas y sacaste campeón a Lionel.',
               imageUrl: `${picture}`,
