@@ -264,12 +264,12 @@ export const Questions = [
         name2: "Fácil",
         category: 'Facil',
         img: 'Acá va la url de la imagen o la ruta de la misma',
-        question: '¿Cuál de los siguientes clubes ganó menos Premier League?', 
+        question: '¿Cuál de los siguientes clubes ganó más Premier League?', 
         options: [
             {option: "Arsenal", isCorrect: false},
-            {option: "Liverpool", isCorrect: true},
+            {option: "Liverpool", isCorrect: false},
             {option: "Chelsea", isCorrect: false},
-            {option: "Manchester City", isCorrect: false},
+            {option: "Manchester City", isCorrect: true},
         ]        
       
     },
@@ -281,10 +281,10 @@ export const Questions = [
         category: 'Facil',
         question: '¿Qué futbolista nunca usó la "10" en la Selección Argentina?',
         options: [
-            {option: "Paulo Dybala", isCorrect: true},
-            {option: "Javier Pastore", isCorrect: false},
-            {option: "Erik Lamela", isCorrect: false},
-            {option: "Nicolás Gaitán", isCorrect: false},
+            {option: "Maximiliano Moralez", isCorrect: false},
+            {option: "Maximiliano Rodriguez", isCorrect: true},
+            {option: "Walter Erviti", isCorrect: false},
+            {option: "Ángel Correa", isCorrect: false},
         ]   
         
 
@@ -296,12 +296,12 @@ export const Questions = [
         name2: "Fácil",
         category: 'Facil',
         img: 'Acá va la url de la imagen o la ruta de la misma',
-        question: '¿Cuál de los siguientes clubes ganó más Champions League?',
+        question: '¿Cuál de los siguientes clubes ganó menos Champions League?',
         options: [
-                {option: "Juventus", isCorrect: false},
+                {option: "Juventus", isCorrect: true},
                 {option: "Manchester United", isCorrect: false},
                 {option: "Inter", isCorrect: false},
-                {option: "Ajax", isCorrect: true},
+                {option: "Ajax", isCorrect: false},
             ] 
  
 
@@ -313,12 +313,12 @@ export const Questions = [
         name2: "Fácil",
         category: 'Facil',
         img: 'Acá va la url de la imagen o la ruta de la misma',
-        question: '¿Qué futbolista nunca jugó en el Milan FC?',
+        question: '¿Qué futbolista nunca jugó en el Liverpool?',
         options: [
-            {option: "Massimo Ambrosini", isCorrect: false},
-            {option: "Christian Abbiati", isCorrect: false},
-            {option: "Simone Inzaghi", isCorrect: true},
-            {option: "Riccardo Montolivo", isCorrect: false},   
+            {option: "Ashley Cole", isCorrect: true},
+            {option: "Peter Crouch", isCorrect: false},
+            {option: "Joe Cole", isCorrect: false},
+            {option: "Ryan Babel", isCorrect: false},   
         ]
 
     },
@@ -329,12 +329,12 @@ export const Questions = [
         name2: "Fácil",
         category: 'Facil',
         img: 'Acá va la url de la imagen o la ruta de la misma',
-        question: '¿Qué futbolista no juega para la selección de Suiza?', 
+        question: '¿Qué futbolista no juega para la selección de suecia?', 
             options: [
-                {option: "Thomas Delaney", isCorrect: true},
-                {option: "Denis Zakaria", isCorrect: false},
-                {option: "Ricardo Rodríguez", isCorrect: false},
-                {option: "Manuel Akanji", isCorrect: false},
+                {option: "Emil Forsberg", isCorrect: false},
+                {option: "Alexander Isak", isCorrect: false},
+                {option: "Anthony Elanga", isCorrect: false},
+                {option: "Yussuf Poulsen", isCorrect: true},
             ]   
 
     },
@@ -346,12 +346,12 @@ export const Questions = [
         category: 'Dificil',
         name2: "Díficil",
         img: 'Acá va la url de la imagen o la ruta de la misma',
-        question: '¿Cómo se llama el perro de Lionel Messi?', 
+        question: '¿Cómo se llama la madre de Lionel Messi?', 
             options: [
-                {option: "Thor", isCorrect: false},
-                {option: "Flash", isCorrect: false},
-                {option: "Robin", isCorrect: false},
-                {option: "Hulk", isCorrect: true},
+                {option: "Cecilia", isCorrect: false},
+                {option: "Silvia", isCorrect: false},
+                {option: "Celia", isCorrect: true},
+                {option: "Silvina", isCorrect: false},
             ]   
 
     },
@@ -362,12 +362,12 @@ export const Questions = [
         name2: "Díficil",
         category: 'Dificil',
         img: 'Acá va la url de la imagen o la ruta de la misma',
-        question: '¿Quién hizo el gol de la final ganada por Portugal en la Eurocopa del 2016?', 
+        question: '¿Quién erró el último penal para Inglaterra en la final de la Euro vs Italia 2021?', 
             options: [
-                {option: "André Silva", isCorrect: false},
-                {option: "Éder", isCorrect: true},
-                {option: "Adrien Silva", isCorrect: false},
-                {option: "Nani", isCorrect: false},
+                {option: "Harry Maguire", isCorrect: false},
+                {option: "Bukayo Saka", isCorrect: true},
+                {option: "Jadon Sancho", isCorrect: false},
+                {option: "Marcus Rashford", isCorrect: false},
             ]   
 
 
@@ -379,12 +379,12 @@ export const Questions = [
         name2: "Díficil",
         category: 'Dificil',
         img: 'Acá va la url de la imagen o la ruta de la misma',
-        question: '¿Quién convirtió el último penal para consagrar a Boca jr vs Milan en 2003?', 
+        question: '¿Quién convirtió el gol del Real Madrid en la final perdida vs Boca jr en el 2000?', 
             options: [
-                {option: "Matias Donnet", isCorrect: false},
-                {option: "Diego Cagna", isCorrect: false},
-                {option: "Rolando Schiavi", isCorrect: false},
-                {option: "Raúl Cascini", isCorrect: true},
+                {option: "Fernando Morientes", isCorrect: false},
+                {option: "Raúl", isCorrect: false},
+                {option: "Luis Figo", isCorrect: false},
+                {option: "Roberto Carlos", isCorrect: true},
             ]   
 
 
@@ -396,12 +396,12 @@ export const Questions = [
         name2: "Díficil",
         category: 'Dificil',
         img: 'Acá va la url de la imagen o la ruta de la misma',
-        question: '¿Qué jugador argentino nunca jugó en el Valencia Fc?', 
+        question: '¿Qué jugador argentino nunca jugó en el Inter?', 
             options: [
                 {option: "Kily González", isCorrect: false},
-                {option: "Esteban Cambiasso", isCorrect: true},
-                {option: "Fernando Gago", isCorrect: false},
-                {option: "Éver Banega", isCorrect: false},
+                {option: "Mauro Zárate", isCorrect: false},
+                {option: "Roberto Ayala", isCorrect: true},
+                {option: "Santiago Solari", isCorrect: false},
             ]   
     },
 
@@ -411,12 +411,12 @@ export const Questions = [
         name2: "Díficil",
         category: 'Dificil',
         img: 'Acá va la url de la imagen o la ruta de la misma',
-        question: '¿Quién vistió y heredó la 10 de Maradona de forma oficial en un mundial?', 
+        question: '¿Quién no jugó en la final de Argentina vs Nigeria en las olimpiadas 2008?', 
             options: [
-                {option: "Pablo Aimar", isCorrect: false},
-                {option: "Juan Román Riquelme", isCorrect: false},
-                {option: "Marcelo Gallardo", isCorrect: false},
-                {option: "Ariel Ortega", isCorrect: true},
+                {option: "Gonzalo Higuaín", isCorrect: true},
+                {option: "Pablo Zabaleta", isCorrect: false},
+                {option: "Fernando Gago", isCorrect: false},
+                {option: "Javier Mascherano", isCorrect: false},
             ]   
 
 

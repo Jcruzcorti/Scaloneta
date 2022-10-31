@@ -14,7 +14,7 @@ function App() {
         </header>
 
         <section className="App-section">       
-          <ItemListContainer greet="FINALISSIMA POR UN LOMITO PA"/>        
+          <ItemListContainer greet="NO EMPATEN"/>        
         </section>
     </div>
   );
