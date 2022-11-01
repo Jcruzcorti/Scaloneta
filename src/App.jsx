@@ -14,7 +14,7 @@ function App() {
         </header>
 
         <section className="App-section">       
-          <ItemListContainer greet="NO EMPATEN"/>        
+          <ItemListContainer greet="QUIZ DE LA SCALONETA"/>        
         </section>
     </div>
   );

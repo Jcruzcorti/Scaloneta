@@ -66,7 +66,7 @@ function CartModal({score}) {
       else {
         quizAnswer(dataAnswer).then((answerCreated)=>{
 
-          if (score<=5) {
+          if (score<=7) {
             Swal.fire({
               title: 'Obtuviste una puntuación de ' + score2 + ' respuestas correctas y pusiste triste a Messi.', 
               imageUrl: `${picture3}`,
@@ -76,7 +76,7 @@ function CartModal({score}) {
               showConfirmButton:false,
             })
           }
-          else if (score>5 && score2<=7){
+          else if (score>7 && score2<=12){
             Swal.fire({
               title: 'Obtuviste una puntuación de ' + score2 + ' respuestas correctas y Messi te aprueba.',
               imageUrl: `${picture2}`,
@@ -87,7 +87,7 @@ function CartModal({score}) {
             })
           }
 
-          else if (score>7){
+          else if (score>12){
             Swal.fire({
               title: 'Obtuviste una puntuación de ' + score2 + ' respuestas correctas y sacaste campeón a Lionel.',
               imageUrl: `${picture}`,
